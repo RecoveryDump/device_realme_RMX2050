@@ -1,8 +1,8 @@
 name: Unpack Recovery/Boot Image
 on:
-  push:
-    branches:
-    - 'main'
+  watch:
+    types: [started]
+
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -22,4 +22,4 @@ jobs:
         git config --global user.name "MD Raza"
         git add .
         git commit -m "Unpacked" >/dev/null
-        git push origin HEAD:main
+        git push origin
